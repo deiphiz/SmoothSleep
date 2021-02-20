@@ -10,6 +10,7 @@ worlds:
     min-night-speed-mult: 10
     max-night-speed-mult: 20
     all-sleeping-speed-mult: 30
+    first-sleeping-min: true
     night-speed-curve: 0.5
     accelerate-random-tick: true
     max-random-tick: 1000

@@ -91,9 +91,13 @@ public class WorldData implements Purgeable {
 	public double getSleepRatio() {
 		double s = getSleepers().size(); // Sleepers count
 		double a = getWakers().size() + s; // Wakers + Sleepers count
+		double f = 0; // 0 = first player sleeping will scale
+		if (getSettings().getBoolean(ConfigHelper.WorldSettingKey.FIRST_SLEEPING_MIN)) {
+			f = 1;
+		}
 		if (a <= 1 && s >= 1) return 1.0; // Only player is sleeping
-		if (a <= 1 || s <= 1) return 0.0; // No one sleeping or online
-		return (s - 1) / (a - 1); // -1 on both = first player sleeping causes min night mult
+		if (a < 1 || s < 1) return 0.0; // No one sleeping or online
+		return (s - f) / (a - f); // -1 on both = first player sleeping causes min night mult
 	}
 
 	public void resetFinishedSleeping() { finishedSleeping.clear(); }

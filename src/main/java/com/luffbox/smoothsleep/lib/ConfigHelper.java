@@ -137,6 +137,7 @@ public class ConfigHelper {
 		MIN_NIGHT_MULT("min-night-speed-mult", double.class),
 		MAX_NIGHT_MULT("max-night-speed-mult", double.class),
 		ALL_ASLEEP_NIGHT_MULT("all-sleeping-speed-mult", double.class),
+		FIRST_SLEEPING_MIN("first-sleeping-min", boolean.class),
 		SPEED_CURVE("night-speed-curve", double.class),
 		ACCEL_RAND_TICK("accelerate-random-tick", boolean.class),
 		MAX_RAND_TICK("max-random-tick", int.class),
